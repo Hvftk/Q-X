@@ -1,23 +1,9 @@
-
-/*
-#Keep
-
-Surge4.0:
-http-response https:\/\/api\.gotokeep\.com\/(klass\/v2\/k\/\d+\/subject|training\/v2\/exercises\/.+\/dynamic) requires-body=1,max-size=0,debug=1,Keep.js
-
-QX1.0.0:
-https:\/\/api\.gotokeep\.com\/(klass\/v2\/k\/\d+\/subject|training\/v2\/exercises\/.+\/dynamic) url script-response-body Keep.js
-
-#MIMT=api.gotokeep.com
-*/
-
-
 let url = $request.url;
 let body = $response.body;
 let obj = JSON.parse(body);
 
-const path1 = 'exercises';
-const path2 = '/klass/v2/k/';
+const path1 = 'dynamic';
+const path2 = 'subject';
 
 if (url.indexOf(path1) != -1) {
    obj.data.permission.isMembership = true;
