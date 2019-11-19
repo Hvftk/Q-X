@@ -1,15 +1,23 @@
 var body = $response.body;
-let obj = JSON.parse(body);
-obj["modules"] = null;
-obj["auditionDuration"] = null;
-body = JSON.stringify(obj);
-$done(body);
+var url = $request.url;
+var obj = JSON.parse(body);
 
+const vip = '/api/v2/readings/limitation';
+const time = '/api/v2/readings/accessible';
+
+if (url.indexOf(vip) != -1) {
+	obj["modules"] = [];
+	obj["auditionDuration"] = 7200;
+	body = JSON.stringify(obj);
+}
+
+if (url.indexOf(time) != -1) {
+	obj["from"] = 1482071586;
+	obj["to"] = 1671373986;
+	body = JSON.stringify(obj);
+}
+
+$done({body});
 /**
  * @supported 7EE45021521D
  */
- 
-// Made by Yxiaocai
-// 英语流利说
-// hostname = vira.llsapp.com
-// https?://vira.llsapp.com/api/v2/readings/limitation 
