@@ -17,7 +17,7 @@ obj= {
 $done({body: JSON.stringify(obj)});
 
 /**
- * @supported 7EE45021521D
+ * @supported 7EE45021521D  B2CCF78FE632
  */
 
 // Descriptions
