@@ -7,3 +7,7 @@ body['data'].forEach((element, index)=>{
 })
 body=JSON.stringify(body)
 $done({body})
+
+/**
+ * @supported 7EE45021521D
+ */
